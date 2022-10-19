@@ -52,6 +52,7 @@ class CoreDataManager {
         return information
     }
     
+    // MARK: Ver.Update with Index
     func updateData(index: Int) {
         let information = readData()
         
@@ -64,6 +65,32 @@ class CoreDataManager {
         }
     }
     
+    func updateData(videoInformation: VideoInformation) {
+        let information = readData()
+        
+        guard let id = videoInformation.id else { return }
+        print("2::: ", videoInformation.id)
+        let request = NSFetchRequest<NSManagedObject>(entityName: "VideoInformation")
+                    // 단서 / 찾기 위한 조건 설정
+        request.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+                    
+                    do {
+                        // 요청서를 통해서 데이터 가져오기
+                        if let info = try context.fetch(request) as? [VideoInformation] {
+                            // 배열의 첫번째
+                            if let tempInfo = info.first {
+                                print("3::: ", tempInfo.id)
+                                tempInfo.setValue("거지같은거", forKey: "gymName")
+                                
+                            }
+                        }
+                    } catch {
+                        print("업데이트 실패")
+                    }
+            saveData(context: context)
+    }
+    
+    // MARK: Ver.Delete with Index
     func deleteData(index: Int) {
         let information = readData()
         

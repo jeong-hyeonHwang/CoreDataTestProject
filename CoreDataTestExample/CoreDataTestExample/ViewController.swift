@@ -117,11 +117,14 @@ class ViewController: UIViewController {
     }
     
     @objc func updateData() {
-        CoreDataManager.shared.updateData(index: 0)
+//        CoreDataManager.shared.updateData(index: 0)
+        let infoList = CoreDataManager.shared.readData()
+        print("1::: ", infoList[0].id)
+        CoreDataManager.shared.updateData(videoInformation: infoList[0])
     }
     
     @objc func deleteData() {
-        CoreDataManager.shared.deleteData(index: 0)
+//        CoreDataManager.shared.deleteData(index: 0)
     }
     
     @objc func deleteAllData() {

@@ -2,7 +2,7 @@
 //  VideoInformation+CoreDataClass.swift
 //  CoreDataTestExample
 //
-//  Created by 황정현 on 2022/10/19.
+//  Created by 황정현 on 2022/10/20.
 //
 //
 
