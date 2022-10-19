@@ -27,6 +27,7 @@ class CoreDataManager {
         
         if let entity = entity {
             let videoInfo = NSManagedObject(entity: entity, insertInto: context)
+            videoInfo.setValue(UUID(), forKey: "id")
             videoInfo.setValue(info.gymName, forKey: "gymName")
             videoInfo.setValue(info.gymVisitDate, forKey: "gymVisitDate")
             videoInfo.setValue(info.videoUrl, forKey: "videoUrl")
@@ -66,25 +67,17 @@ class CoreDataManager {
     }
     
     func updateData(videoInformation: VideoInformation) {
-        let information = readData()
-        
+
         guard let id = videoInformation.id else { return }
-        print("2::: ", videoInformation.id)
-        let request = NSFetchRequest<NSManagedObject>(entityName: "VideoInformation")
-                    // 단서 / 찾기 위한 조건 설정
+        let request = VideoInformation.fetchRequest()
+        
         request.predicate = NSPredicate(format: "id == %@", id as CVarArg)
-                    
                     do {
-                        // 요청서를 통해서 데이터 가져오기
-                        if let info = try context.fetch(request) as? [VideoInformation] {
-                            // 배열의 첫번째
+                        let info = try context.fetch(request)
                             if let tempInfo = info.first {
-                                print("3::: ", tempInfo.id)
-                                tempInfo.setValue("거지같은거", forKey: "gymName")
-                                
+                                tempInfo.setValue("GIIIE", forKey: "gymName")
                             }
-                        }
-                    } catch {
+                        } catch {
                         print("업데이트 실패")
                     }
             saveData(context: context)
@@ -102,6 +95,24 @@ class CoreDataManager {
             print("FAILURE: \(index)th index doesn't Exist")
         }
     }
+    
+    func deleteData(videoInformation: VideoInformation) {
+        
+        guard let id = videoInformation.id else { return }
+        let request = VideoInformation.fetchRequest()
+        
+        request.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+        do {
+            let info = try context.fetch(request)
+                if let tempInfo = info.first {
+                    context.delete(tempInfo)
+                }
+            } catch {
+            print("업데이트 실패")
+        }
+        saveData(context: context)
+    }
+    
     func deleteAllData() {
         let objects = readData()
         

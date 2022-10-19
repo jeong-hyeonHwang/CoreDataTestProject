@@ -114,22 +114,32 @@ class ViewController: UIViewController {
             print("Current Gym Name ", infoList[0].gymName)
         }
         print("Current Data Num Is ", infoList.count)
+        
+        printCurrentLeftObject()
     }
     
     @objc func updateData() {
-//        CoreDataManager.shared.updateData(index: 0)
         let infoList = CoreDataManager.shared.readData()
-        print("1::: ", infoList[0].id)
         CoreDataManager.shared.updateData(videoInformation: infoList[0])
+        
+        printCurrentLeftObject()
     }
     
     @objc func deleteData() {
-//        CoreDataManager.shared.deleteData(index: 0)
+        let infoList = CoreDataManager.shared.readData()
+        CoreDataManager.shared.deleteData(videoInformation: infoList[0])
+        
+        printCurrentLeftObject()
     }
     
     @objc func deleteAllData() {
         CoreDataManager.shared.deleteAllData()
         print("DELETE ALL DATA")
     }
+    
+    func printCurrentLeftObject() {
+        CoreDataManager.shared.readData().forEach({
+            print("ㅎ... ", $0.gymName)
+        })
+    }
 }
-
