@@ -8,8 +8,8 @@
 import UIKit
 import CoreData
 
-class DataManager {
-    static var shared = DataManager()
+class CoreDataManager {
+    static var shared = CoreDataManager()
     
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private lazy var context = appDelegate.persistentContainer.viewContext
@@ -50,13 +50,26 @@ class DataManager {
         return information
     }
     
-    func updateData() {
+    func updateData(index: Int) {
         let information = readData()
-        information[0].setValue("NOWhere", forKey: "gymName")
         
+        if information.count > index {
+            information[index].setValue("NOWhere", forKey: "gymName")
+            print("Update Data Index is \(index)")
+            saveData(context: context)
+        }
         saveData(context: context)
     }
     
+    func deleteData(index: Int) {
+        let information = readData()
+        
+        if information.count > index {
+            context.delete(information[index])
+            print("Delete Data Index is \(index)")
+            saveData(context: context)
+        }
+    }
     func deleteAllData() {
         let objects = readData()
         
