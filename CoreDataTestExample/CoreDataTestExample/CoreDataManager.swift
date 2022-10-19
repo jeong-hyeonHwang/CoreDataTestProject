@@ -141,6 +141,23 @@ class CoreDataManager {
             saveData(context: context)
     }
     
+    func updateFeedback(videoInformation: VideoInformation, feedback: String) {
+
+        guard let id = videoInformation.id else { return }
+        let request = VideoInformation.fetchRequest()
+        
+        request.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+                    do {
+                        let info = try context.fetch(request)
+                            if let tempInfo = info.first {
+                                tempInfo.setValue(feedback, forKey: "feedback")
+                            }
+                        } catch {
+                        print("업데이트 실패")
+                    }
+            saveData(context: context)
+    }
+    
     // MARK: Ver.Delete with Index
     func deleteData(index: Int) {
         let information = readData()
