@@ -54,6 +54,7 @@ class ViewController: UIViewController {
         })
         
         layoutConfigure()
+        componentConfigure()
     }
     
     func layoutConfigure() {
@@ -65,34 +66,66 @@ class ViewController: UIViewController {
         })
         
         readDataButton.snp.makeConstraints({
-            $0.top.equalToSuperview().inset(100)
+            $0.top.equalTo(createDataButton).inset(100)
             $0.centerX.equalToSuperview()
             $0.width.equalTo(100)
             $0.height.equalTo(50)
         })
         
         updateDataButton.snp.makeConstraints({
-            $0.top.equalToSuperview().inset(100)
+            $0.top.equalTo(readDataButton).inset(100)
             $0.centerX.equalToSuperview()
             $0.width.equalTo(100)
             $0.height.equalTo(50)
         })
         
         deleteDataButton.snp.makeConstraints({
-            $0.top.equalToSuperview().inset(100)
+            $0.top.equalTo(updateDataButton).inset(100)
             $0.centerX.equalToSuperview()
             $0.width.equalTo(100)
             $0.height.equalTo(50)
         })
         
         deleteAllDataButton.snp.makeConstraints({
-            $0.top.equalToSuperview().inset(100)
+            $0.top.equalTo(deleteDataButton).inset(100)
             $0.centerX.equalToSuperview()
             $0.width.equalTo(100)
             $0.height.equalTo(50)
         })
     }
+    
+    func componentConfigure() {
+        createDataButton.addTarget(self, action: #selector(createData), for: .touchUpInside)
+        readDataButton.addTarget(self, action: #selector(readData), for: .touchUpInside)
+        updateDataButton.addTarget(self, action: #selector(updateData), for: .touchUpInside)
+        deleteDataButton.addTarget(self, action: #selector(deleteData), for: .touchUpInside)
+        deleteAllDataButton.addTarget(self, action: #selector(deleteAllData), for: .touchUpInside)
+    }
 
-
+    @objc func createData() {
+        let info = VideoInfo(gymName: "Zinzinzara", gymVisitDate: Date(), videoUrl: "Something...", problemLevel: 3, isSucceeded: false)
+        CoreDataManager.shared.createData(info: info)
+    }
+    
+    @objc func readData() {
+        let infoList = CoreDataManager.shared.readData()
+        
+        if infoList.count != 0 {
+            print("Current Gym Name ", infoList[0].gymName)
+        }
+        print("Current Data Num Is ", infoList.count)
+    }
+    
+    @objc func updateData() {
+        CoreDataManager.shared.updateData(index: 0)
+    }
+    
+    @objc func deleteData() {
+        CoreDataManager.shared.deleteData(index: 0)
+    }
+    
+    @objc func deleteAllData() {
+        CoreDataManager.shared.deleteAllData()
+    }
 }
 
