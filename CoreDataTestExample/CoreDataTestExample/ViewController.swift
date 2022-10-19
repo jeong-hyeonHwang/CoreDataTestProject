@@ -30,13 +30,13 @@ class ViewController: UIViewController {
     
     lazy var deleteDataButton: UIButton = {
         let button = UIButton()
-        button.setTitle("UPDATE", for: .normal)
+        button.setTitle("DELETE", for: .normal)
         return button
     }()
     
     lazy var deleteAllDataButton: UIButton = {
         let button = UIButton()
-        button.setTitle("UPDATE", for: .normal)
+        button.setTitle("⚠️DELETE ALL⚠️", for: .normal)
         return button
     }()
     
@@ -89,7 +89,7 @@ class ViewController: UIViewController {
         deleteAllDataButton.snp.makeConstraints({
             $0.top.equalTo(deleteDataButton).inset(100)
             $0.centerX.equalToSuperview()
-            $0.width.equalTo(100)
+            $0.width.equalTo(300)
             $0.height.equalTo(50)
         })
     }
@@ -126,6 +126,7 @@ class ViewController: UIViewController {
     
     @objc func deleteAllData() {
         CoreDataManager.shared.deleteAllData()
+        print("DELETE ALL DATA")
     }
 }
 
