@@ -66,6 +66,7 @@
 		3AE56AB529002D6F00CF0043 /* CoreDataTestExample */ = {
 			isa = PBXGroup;
 			children = (
+				3AE56AD629002F5300CF0043 /* Model */,
 				3AE56ACD29002E4700CF0043 /* VideoInformation+CoreDataClass.swift */,
 				3AE56ACE29002E4700CF0043 /* VideoInformation+CoreDataProperties.swift */,
 				3AE56AB629002D6F00CF0043 /* AppDelegate.swift */,
@@ -76,9 +77,16 @@
 				3AE56AC429002D7100CF0043 /* LaunchScreen.storyboard */,
 				3AE56AC729002D7100CF0043 /* Info.plist */,
 				3AE56ABF29002D7000CF0043 /* CoreDataTestExample.xcdatamodeld */,
-				3AE56AD429002F3100CF0043 /* VideoInfo.swift */,
 			);
 			path = CoreDataTestExample;
+			sourceTree = "<group>";
+		};
+		3AE56AD629002F5300CF0043 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3AE56AD429002F3100CF0043 /* VideoInfo.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
