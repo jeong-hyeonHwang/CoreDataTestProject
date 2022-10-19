@@ -16,6 +16,7 @@
 		3AE56AC629002D7100CF0043 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AE56AC429002D7100CF0043 /* LaunchScreen.storyboard */; };
 		3AE56ACF29002E4700CF0043 /* VideoInformation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE56ACD29002E4700CF0043 /* VideoInformation+CoreDataClass.swift */; };
 		3AE56AD029002E4700CF0043 /* VideoInformation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE56ACE29002E4700CF0043 /* VideoInformation+CoreDataProperties.swift */; };
+		3AE56AD329002EFD00CF0043 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3AE56AD229002EFD00CF0043 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AE56AD329002EFD00CF0043 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +94,9 @@
 			dependencies = (
 			);
 			name = CoreDataTestExample;
+			packageProductDependencies = (
+				3AE56AD229002EFD00CF0043 /* SnapKit */,
+			);
 			productName = CoreDataTestExample;
 			productReference = 3AE56AB329002D6F00CF0043 /* CoreDataTestExample.app */;
 			productType = "com.apple.product-type.application";
@@ -120,6 +125,9 @@
 				Base,
 			);
 			mainGroup = 3AE56AAA29002D6F00CF0043;
+			packageReferences = (
+				3AE56AD129002EFD00CF0043 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 3AE56AB429002D6F00CF0043 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -370,6 +378,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3AE56AD129002EFD00CF0043 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3AE56AD229002EFD00CF0043 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3AE56AD129002EFD00CF0043 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		3AE56ABF29002D7000CF0043 /* CoreDataTestExample.xcdatamodeld */ = {
