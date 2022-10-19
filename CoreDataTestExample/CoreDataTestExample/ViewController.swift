@@ -52,6 +52,45 @@ class ViewController: UIViewController {
         ].forEach({
             view.addSubview($0)
         })
+        
+        layoutConfigure()
+    }
+    
+    func layoutConfigure() {
+        createDataButton.snp.makeConstraints({
+            $0.top.equalToSuperview().inset(100)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(100)
+            $0.height.equalTo(50)
+        })
+        
+        readDataButton.snp.makeConstraints({
+            $0.top.equalToSuperview().inset(100)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(100)
+            $0.height.equalTo(50)
+        })
+        
+        updateDataButton.snp.makeConstraints({
+            $0.top.equalToSuperview().inset(100)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(100)
+            $0.height.equalTo(50)
+        })
+        
+        deleteDataButton.snp.makeConstraints({
+            $0.top.equalToSuperview().inset(100)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(100)
+            $0.height.equalTo(50)
+        })
+        
+        deleteAllDataButton.snp.makeConstraints({
+            $0.top.equalToSuperview().inset(100)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(100)
+            $0.height.equalTo(50)
+        })
     }
 
 
