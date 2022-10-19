@@ -16,13 +16,13 @@ struct VideoInfo {
     var feedback: String
     var isFavorite: Bool
     
-    init(gymName: String, gymVisitDate: Date, videoUrl: String, problemLevel: Int, isSucceeded: Bool, isFavorite: Bool) {
+    init(gymName: String, gymVisitDate: Date, videoUrl: String, problemLevel: Int, isSucceeded: Bool) {
         self.gymName = gymName
         self.gymVisitDate = gymVisitDate
         self.videoUrl = videoUrl
         self.problemLevel = problemLevel
         self.isSucceeded = isSucceeded
+        self.isFavorite = false
         self.feedback = ""
-        self.isFavorite = isFavorite
     }
 }
