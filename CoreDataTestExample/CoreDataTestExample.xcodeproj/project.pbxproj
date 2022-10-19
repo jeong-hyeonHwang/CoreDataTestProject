@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3AB796A829008FC100B15B28 /* EditAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB796A729008FC100B15B28 /* EditAttribute.swift */; };
 		3AE56AB729002D6F00CF0043 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE56AB629002D6F00CF0043 /* AppDelegate.swift */; };
 		3AE56AB929002D6F00CF0043 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE56AB829002D6F00CF0043 /* SceneDelegate.swift */; };
 		3AE56ABB29002D7000CF0043 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE56ABA29002D6F00CF0043 /* ViewController.swift */; };
@@ -17,11 +18,12 @@
 		3AE56AD329002EFD00CF0043 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3AE56AD229002EFD00CF0043 /* SnapKit */; };
 		3AE56AD529002F3100CF0043 /* VideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE56AD429002F3100CF0043 /* VideoInfo.swift */; };
 		3AE56AD82900314200CF0043 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE56AD72900314200CF0043 /* CoreDataManager.swift */; };
-		3AE56AE329005F8A00CF0043 /* VideoInformation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE56AE129005F8A00CF0043 /* VideoInformation+CoreDataClass.swift */; };
-		3AE56AE429005F8A00CF0043 /* VideoInformation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE56AE229005F8A00CF0043 /* VideoInformation+CoreDataProperties.swift */; };
+		3AE56AF72900728000CF0043 /* VideoInformation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE56AF52900728000CF0043 /* VideoInformation+CoreDataClass.swift */; };
+		3AE56AF82900728000CF0043 /* VideoInformation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE56AF62900728000CF0043 /* VideoInformation+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3AB796A729008FC100B15B28 /* EditAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAttribute.swift; sourceTree = "<group>"; };
 		3AE56AB329002D6F00CF0043 /* CoreDataTestExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataTestExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AE56AB629002D6F00CF0043 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AE56AB829002D6F00CF0043 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,8 +35,8 @@
 		3AE56AC729002D7100CF0043 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AE56AD429002F3100CF0043 /* VideoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInfo.swift; sourceTree = "<group>"; };
 		3AE56AD72900314200CF0043 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		3AE56AE129005F8A00CF0043 /* VideoInformation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "VideoInformation+CoreDataClass.swift"; path = "CoreDataTestExample/VideoInformation+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3AE56AE229005F8A00CF0043 /* VideoInformation+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "VideoInformation+CoreDataProperties.swift"; path = "CoreDataTestExample/VideoInformation+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3AE56AF52900728000CF0043 /* VideoInformation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "VideoInformation+CoreDataClass.swift"; path = "CoreDataTestExample/VideoInformation+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3AE56AF62900728000CF0043 /* VideoInformation+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "VideoInformation+CoreDataProperties.swift"; path = "CoreDataTestExample/VideoInformation+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +54,8 @@
 		3AE56AAA29002D6F00CF0043 = {
 			isa = PBXGroup;
 			children = (
-				3AE56AE129005F8A00CF0043 /* VideoInformation+CoreDataClass.swift */,
-				3AE56AE229005F8A00CF0043 /* VideoInformation+CoreDataProperties.swift */,
+				3AE56AF52900728000CF0043 /* VideoInformation+CoreDataClass.swift */,
+				3AE56AF62900728000CF0043 /* VideoInformation+CoreDataProperties.swift */,
 				3AE56AB529002D6F00CF0043 /* CoreDataTestExample */,
 				3AE56AB429002D6F00CF0043 /* Products */,
 			);
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				3AE56AD429002F3100CF0043 /* VideoInfo.swift */,
+				3AB796A729008FC100B15B28 /* EditAttribute.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -173,9 +176,10 @@
 				3AE56AB729002D6F00CF0043 /* AppDelegate.swift in Sources */,
 				3AE56AC129002D7000CF0043 /* CoreDataTestExample.xcdatamodeld in Sources */,
 				3AE56AB929002D6F00CF0043 /* SceneDelegate.swift in Sources */,
-				3AE56AE429005F8A00CF0043 /* VideoInformation+CoreDataProperties.swift in Sources */,
-				3AE56AE329005F8A00CF0043 /* VideoInformation+CoreDataClass.swift in Sources */,
+				3AE56AF82900728000CF0043 /* VideoInformation+CoreDataProperties.swift in Sources */,
+				3AE56AF72900728000CF0043 /* VideoInformation+CoreDataClass.swift in Sources */,
 				3AE56AD82900314200CF0043 /* CoreDataManager.swift in Sources */,
+				3AB796A829008FC100B15B28 /* EditAttribute.swift in Sources */,
 				3AE56AD529002F3100CF0043 /* VideoInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

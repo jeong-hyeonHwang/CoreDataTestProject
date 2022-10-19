@@ -45,7 +45,9 @@ class CoreDataManager {
         
         do {
             information = try context.fetch(VideoInformation.fetchRequest())
-            print("CURRENT Gym Name Is \(information[0].gymName)")
+            if information.count > 0 {
+//                print("CURRENT Gym Name Is \(information[0].gymName)")
+            }
         } catch {
             print(error.localizedDescription)
         }
@@ -76,6 +78,62 @@ class CoreDataManager {
                         let info = try context.fetch(request)
                             if let tempInfo = info.first {
                                 tempInfo.setValue("GIIIE", forKey: "gymName")
+                            }
+                        } catch {
+                        print("업데이트 실패")
+                    }
+            saveData(context: context)
+    }
+    
+    // MARK: EditCase One 1 - 코드 반복 O
+    func updateData(videoInformation: VideoInformation, value: Any, editAttribute: EditAttribute) {
+
+        guard let id = videoInformation.id else { return }
+        let request = VideoInformation.fetchRequest()
+        
+        request.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+                    do {
+                        let info = try context.fetch(request)
+                            if let tempInfo = info.first {
+                                tempInfo.setValue(value, forKey: editAttribute.rawValue)
+                            }
+                        } catch {
+                        print("업데이트 실패")
+                    }
+            saveData(context: context)
+    }
+    
+    // MARK: EditCase TWO 1 - 코드 반복 O
+    func updateDateAndGymData(videoInformation: VideoInformation, gymVisitDate: Date, gymName: String) {
+
+        guard let id = videoInformation.id else { return }
+        let request = VideoInformation.fetchRequest()
+        
+        request.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+                    do {
+                        let info = try context.fetch(request)
+                            if let tempInfo = info.first {
+                                tempInfo.setValue(gymVisitDate, forKey: "gymVisitDate")
+                                tempInfo.setValue(gymName, forKey: "gymName")
+                            }
+                        } catch {
+                        print("업데이트 실패")
+                    }
+            saveData(context: context)
+    }
+    
+    // MARK: EditCase TWO 2 - 코드 반복 O
+    func updateLevelAndPF(videoInformation: VideoInformation, problemLevel: Int, isSucceeded: Bool) {
+
+        guard let id = videoInformation.id else { return }
+        let request = VideoInformation.fetchRequest()
+        
+        request.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+                    do {
+                        let info = try context.fetch(request)
+                            if let tempInfo = info.first {
+                                tempInfo.setValue(problemLevel, forKey: "problemLevel")
+                                tempInfo.setValue(isSucceeded, forKey: "isSucceeded")
                             }
                         } catch {
                         print("업데이트 실패")
@@ -116,11 +174,15 @@ class CoreDataManager {
     func deleteAllData() {
         let objects = readData()
         
-        for object in objects {
-            context.delete(object)
+        if objects.count > 0 {
+            for object in objects {
+                context.delete(object)
+            }
+            print("DELETE ALL DATA")
+            saveData(context: context)
+        } else {
+            print("FAILURE: Index doesn't Exist")
         }
-        
-        saveData(context: context)
     }
     
     func saveData(context: NSManagedObjectContext) {
@@ -131,6 +193,29 @@ class CoreDataManager {
         }
     }
     
+    
+//    func filterData(isPlace: Bool) -> [VideoInformation] {
+//        let items = readData()
+//
+//        let filterdItems = items.filter
+//
+//        return filteredItems
+//    }
+//
+//    // ---
+//    // Favorite, PF
+//    func secondFilterData(whichOne: Enum) -> [VideoInformation] {
+//
+//        let filterData
+//        switch
+//
+//        return filterData(isPlace: <#T##Bool#>)
+//    }
+//
+//    // Count
+//    func count() -> Int {
+//        return secondFilterData().count
+//    }
     
 }
 

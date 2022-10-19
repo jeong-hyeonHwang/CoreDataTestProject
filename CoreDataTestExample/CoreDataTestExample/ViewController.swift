@@ -22,9 +22,15 @@ class ViewController: UIViewController {
         return button
     }()
     
-    lazy var updateDataButton: UIButton = {
+    lazy var updateGymDataButton: UIButton = {
         let button = UIButton()
-        button.setTitle("UPDATE", for: .normal)
+        button.setTitle("UPDATE GYM", for: .normal)
+        return button
+    }()
+    
+    lazy var updateProblemDataButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("UPDATE PROB", for: .normal)
         return button
     }()
     
@@ -46,7 +52,8 @@ class ViewController: UIViewController {
         [
             createDataButton,
             readDataButton,
-            updateDataButton,
+            updateGymDataButton,
+            updateProblemDataButton,
             deleteDataButton,
             deleteAllDataButton
         ].forEach({
@@ -72,15 +79,22 @@ class ViewController: UIViewController {
             $0.height.equalTo(50)
         })
         
-        updateDataButton.snp.makeConstraints({
+        updateGymDataButton.snp.makeConstraints({
             $0.top.equalTo(readDataButton).inset(100)
             $0.centerX.equalToSuperview()
-            $0.width.equalTo(100)
+            $0.width.equalTo(300)
+            $0.height.equalTo(50)
+        })
+        
+        updateProblemDataButton.snp.makeConstraints({
+            $0.top.equalTo(updateGymDataButton).inset(100)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(300)
             $0.height.equalTo(50)
         })
         
         deleteDataButton.snp.makeConstraints({
-            $0.top.equalTo(updateDataButton).inset(100)
+            $0.top.equalTo(updateProblemDataButton).inset(100)
             $0.centerX.equalToSuperview()
             $0.width.equalTo(100)
             $0.height.equalTo(50)
@@ -97,7 +111,8 @@ class ViewController: UIViewController {
     func componentConfigure() {
         createDataButton.addTarget(self, action: #selector(createData), for: .touchUpInside)
         readDataButton.addTarget(self, action: #selector(readData), for: .touchUpInside)
-        updateDataButton.addTarget(self, action: #selector(updateData), for: .touchUpInside)
+        updateGymDataButton.addTarget(self, action: #selector(updateGymData), for: .touchUpInside)
+        updateProblemDataButton.addTarget(self, action: #selector(updateProblemData), for: .touchUpInside)
         deleteDataButton.addTarget(self, action: #selector(deleteData), for: .touchUpInside)
         deleteAllDataButton.addTarget(self, action: #selector(deleteAllData), for: .touchUpInside)
     }
@@ -110,19 +125,33 @@ class ViewController: UIViewController {
     @objc func readData() {
         let infoList = CoreDataManager.shared.readData()
         
-        if infoList.count != 0 {
-            print("Current Gym Name ", infoList[0].gymName)
-        }
-        print("Current Data Num Is ", infoList.count)
+//        if infoList.count != 0 {
+//            print("Current Gym Name ", infoList[0].gymName)
+//        }
+//        print("Current Data Num Is ", infoList.count)
         
         printCurrentLeftObject()
     }
     
-    @objc func updateData() {
+//    @objc func updateData() {
+//        let infoList = CoreDataManager.shared.readData()
+//        CoreDataManager.shared.updateData(videoInformation: infoList[0], value: "어디가니", editAttribute: EditAttribute.gymName)
+//
+//        printCurrentLeftObject()
+//    }
+    
+    @objc func updateGymData() {
         let infoList = CoreDataManager.shared.readData()
-        CoreDataManager.shared.updateData(videoInformation: infoList[0])
+        CoreDataManager.shared.updateDateAndGymData(videoInformation: infoList[0], gymVisitDate: Date(), gymName: "어디가니")
         
-        printCurrentLeftObject()
+        printRevisedObjectGymInfo()
+    }
+    
+    @objc func updateProblemData() {
+        let infoList = CoreDataManager.shared.readData()
+        CoreDataManager.shared.updateLevelAndPF(videoInformation: infoList[0], problemLevel: 5, isSucceeded: true)
+        
+        printRevisedObjectProblemInfo()
     }
     
     @objc func deleteData() {
@@ -134,12 +163,23 @@ class ViewController: UIViewController {
     
     @objc func deleteAllData() {
         CoreDataManager.shared.deleteAllData()
-        print("DELETE ALL DATA")
     }
-    
+}
+
+extension ViewController {
     func printCurrentLeftObject() {
         CoreDataManager.shared.readData().forEach({
-            print("ㅎ... ", $0.gymName)
+            print("Data \($0.gymName) \($0.gymVisitDate) \($0.problemLevel) \($0.isSucceeded)")
         })
+    }
+    
+    func printRevisedObjectGymInfo() {
+        let data = CoreDataManager.shared.readData()[0]
+        print("Gym Info " , data.gymName, " ", data.gymVisitDate)
+    }
+    
+    func printRevisedObjectProblemInfo() {
+        let data = CoreDataManager.shared.readData()[0]
+        print("Problem Info " , data.problemLevel, " ", data.isSucceeded)
     }
 }
