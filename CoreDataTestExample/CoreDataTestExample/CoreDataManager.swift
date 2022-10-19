@@ -34,36 +34,12 @@ class DataManager {
             videoInfo.setValue(info.isSucceeded, forKey: "isSucceeded")
             videoInfo.setValue(info.feedback, forKey: "feedback")
             videoInfo.setValue(info.isFavorite, forKey: "isFavorite")
-           
+            
             saveData(context: context)
         }
     }
     
-    func removeAllData() {
-        do {
-            let objects = data()
-
-            for object in objects {
-                context.delete(object)
-            }
-            
-        } catch {
-            print(error.localizedDescription)
-            
-        }
-        
-       saveData(context: context)
-    }
-    
-    func saveData(context: NSManagedObjectContext) {
-        do {
-            try context.save()
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
-    
-    func data() -> [VideoInformation] {
+    func readData() -> [VideoInformation] {
         var information: [VideoInformation] = []
         do {
             information = try context.fetch(VideoInformation.fetchRequest())
@@ -75,14 +51,30 @@ class DataManager {
     }
     
     func updateData() {
-        do {
-            let information = data()
-            information[0].setValue("NOWhere", forKey: "gymName")
-        } catch {
-            print(error.localizedDescription)
+        let information = readData()
+        information[0].setValue("NOWhere", forKey: "gymName")
+        
+        saveData(context: context)
+    }
+    
+    func deleteAllData() {
+        let objects = readData()
+        
+        for object in objects {
+            context.delete(object)
         }
         
         saveData(context: context)
     }
+    
+    func saveData(context: NSManagedObjectContext) {
+        do {
+            try context.save()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    
 }
 
