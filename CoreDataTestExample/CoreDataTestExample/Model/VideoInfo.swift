@@ -10,18 +10,18 @@ import Foundation
 struct VideoInfo {
     var gymName: String
     var gymVisitDate: Date
-    var videoName: String
+    var videoUrl: String
     var problemLevel: Int
-    var isSucceed: Bool
+    var isSucceeded: Bool
     var feedback: String
     var isFavorite: Bool
     
-    init(gymName: String, gymVisitDate: Date, videoName: String, problemLevel: Int, isSucceed: Bool, isFavorite: Bool) {
+    init(gymName: String, gymVisitDate: Date, videoUrl: String, problemLevel: Int, isSucceeded: Bool, isFavorite: Bool) {
         self.gymName = gymName
         self.gymVisitDate = gymVisitDate
-        self.videoName = videoName
+        self.videoUrl = videoUrl
         self.problemLevel = problemLevel
-        self.isSucceed = isSucceed
+        self.isSucceeded = isSucceeded
         self.feedback = ""
         self.isFavorite = isFavorite
     }
