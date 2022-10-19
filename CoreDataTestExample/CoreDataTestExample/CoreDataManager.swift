@@ -41,8 +41,10 @@ class CoreDataManager {
     
     func readData() -> [VideoInformation] {
         var information: [VideoInformation] = []
+        
         do {
             information = try context.fetch(VideoInformation.fetchRequest())
+            print("CURRENT Gym Name Is \(information[0].gymName)")
         } catch {
             print(error.localizedDescription)
         }
@@ -57,8 +59,9 @@ class CoreDataManager {
             information[index].setValue("NOWhere", forKey: "gymName")
             print("Update Data Index is \(index)")
             saveData(context: context)
+        } else {
+         print("FAILURE: \(index)th index doesn't Exist")
         }
-        saveData(context: context)
     }
     
     func deleteData(index: Int) {
@@ -68,6 +71,8 @@ class CoreDataManager {
             context.delete(information[index])
             print("Delete Data Index is \(index)")
             saveData(context: context)
+        } else {
+            print("FAILURE: \(index)th index doesn't Exist")
         }
     }
     func deleteAllData() {
