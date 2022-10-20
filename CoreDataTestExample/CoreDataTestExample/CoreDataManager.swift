@@ -23,21 +23,18 @@ class CoreDataManager {
     }
     
     func createData(info: VideoInfo) {
-        let entity = NSEntityDescription.entity(forEntityName: "VideoInformation", in: context)
+        let entity = NSEntityDescription.insertNewObject(forEntityName: "VideoInformation", into: context)
         
-        if let entity = entity {
-            let videoInfo = NSManagedObject(entity: entity, insertInto: context)
-            videoInfo.setValue(UUID(), forKey: "id")
-            videoInfo.setValue(info.gymName, forKey: "gymName")
-            videoInfo.setValue(info.gymVisitDate, forKey: "gymVisitDate")
-            videoInfo.setValue(info.videoUrl, forKey: "videoUrl")
-            videoInfo.setValue(info.problemLevel, forKey: "problemLevel")
-            videoInfo.setValue(info.isSucceeded, forKey: "isSucceeded")
-            videoInfo.setValue(info.feedback, forKey: "feedback")
-            videoInfo.setValue(info.isFavorite, forKey: "isFavorite")
-            
-            saveData(context: context)
-        }
+        entity.setValue(UUID(), forKey: "id")
+        entity.setValue(info.gymName, forKey: "gymName")
+        entity.setValue(info.gymVisitDate, forKey: "gymVisitDate")
+        entity.setValue(info.videoUrl, forKey: "videoUrl")
+        entity.setValue(info.problemLevel, forKey: "problemLevel")
+        entity.setValue(info.isSucceeded, forKey: "isSucceeded")
+        entity.setValue(info.feedback, forKey: "feedback")
+        entity.setValue(info.isFavorite, forKey: "isFavorite")
+        
+        saveData(context: context)
     }
     
     func readData() -> [VideoInformation] {
