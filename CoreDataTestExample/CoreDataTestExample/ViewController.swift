@@ -58,6 +58,8 @@ class ViewController: UIViewController {
             deleteAllDataButton
         ].forEach({
             view.addSubview($0)
+            $0.backgroundColor = . yellow
+            $0.setTitleColor(.black, for: .normal)
         })
         
         layoutConfigure()
