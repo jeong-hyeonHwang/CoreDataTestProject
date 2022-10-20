@@ -8,14 +8,6 @@
 import UIKit
 import SnapKit
 
-extension Int {
-    
-    func levelWithV() -> String {
-        return "V\(self)"
-    }
-    
-}
-
 class PickerTestViewController: UIViewController {
     
     lazy var wheelPicker: UIPickerView = {
