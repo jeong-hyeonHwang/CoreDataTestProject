@@ -7,17 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A2880E12902DB6700FBFB70 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2880E02902DB6700FBFB70 /* TestViewController.swift */; };
-		3A2880E52902FCDF00FBFB70 /* FinalSortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2880E42902FCDF00FBFB70 /* FinalSortViewController.swift */; };
-		3A2880E72902FEDB00FBFB70 /* FinalSortViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2880E62902FEDB00FBFB70 /* FinalSortViewController+.swift */; };
-		3A2880ED290348E800FBFB70 /* FinalSortViewController++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2880EC290348E800FBFB70 /* FinalSortViewController++.swift */; };
+		3A2880E12902DB6700FBFB70 /* DefaultCRTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2880E02902DB6700FBFB70 /* DefaultCRTestViewController.swift */; };
+		3A2880E52902FCDF00FBFB70 /* SortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2880E42902FCDF00FBFB70 /* SortViewController.swift */; };
+		3A2880E72902FEDB00FBFB70 /* SortViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2880E62902FEDB00FBFB70 /* SortViewController+.swift */; };
+		3A2880ED290348E800FBFB70 /* SortViewController++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2880EC290348E800FBFB70 /* SortViewController++.swift */; };
+		3A2880EF290350F500FBFB70 /* SortOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2880EE290350F500FBFB70 /* SortOption.swift */; };
+		3A2880F12903510700FBFB70 /* FilterOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2880F02903510700FBFB70 /* FilterOption.swift */; };
 		3A70C3CD2901B13100BE11B5 /* PickerTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70C3CC2901B13100BE11B5 /* PickerTestViewController.swift */; };
 		3A70C3D12901E4BE00BE11B5 /* Int+IntWithString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70C3D02901E4BE00BE11B5 /* Int+IntWithString.swift */; };
 		3A70C3D32901F7E800BE11B5 /* VideoInfoForDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A70C3D22901F7E800BE11B5 /* VideoInfoForDummy.swift */; };
 		3AB796A829008FC100B15B28 /* EditAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB796A729008FC100B15B28 /* EditAttribute.swift */; };
 		3AE56AB729002D6F00CF0043 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE56AB629002D6F00CF0043 /* AppDelegate.swift */; };
 		3AE56AB929002D6F00CF0043 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE56AB829002D6F00CF0043 /* SceneDelegate.swift */; };
-		3AE56ABB29002D7000CF0043 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE56ABA29002D6F00CF0043 /* ViewController.swift */; };
+		3AE56ABB29002D7000CF0043 /* DefaultCRUDTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE56ABA29002D6F00CF0043 /* DefaultCRUDTestViewController.swift */; };
 		3AE56AC129002D7000CF0043 /* CoreDataTestExample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3AE56ABF29002D7000CF0043 /* CoreDataTestExample.xcdatamodeld */; };
 		3AE56AC329002D7100CF0043 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AE56AC229002D7100CF0043 /* Assets.xcassets */; };
 		3AE56AC629002D7100CF0043 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AE56AC429002D7100CF0043 /* LaunchScreen.storyboard */; };
@@ -29,10 +31,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3A2880E02902DB6700FBFB70 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
-		3A2880E42902FCDF00FBFB70 /* FinalSortViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalSortViewController.swift; sourceTree = "<group>"; };
-		3A2880E62902FEDB00FBFB70 /* FinalSortViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FinalSortViewController+.swift"; sourceTree = "<group>"; };
-		3A2880EC290348E800FBFB70 /* FinalSortViewController++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FinalSortViewController++.swift"; sourceTree = "<group>"; };
+		3A2880E02902DB6700FBFB70 /* DefaultCRTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCRTestViewController.swift; sourceTree = "<group>"; };
+		3A2880E42902FCDF00FBFB70 /* SortViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortViewController.swift; sourceTree = "<group>"; };
+		3A2880E62902FEDB00FBFB70 /* SortViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SortViewController+.swift"; sourceTree = "<group>"; };
+		3A2880EC290348E800FBFB70 /* SortViewController++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SortViewController++.swift"; sourceTree = "<group>"; };
+		3A2880EE290350F500FBFB70 /* SortOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortOption.swift; sourceTree = "<group>"; };
+		3A2880F02903510700FBFB70 /* FilterOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterOption.swift; sourceTree = "<group>"; };
 		3A70C3CC2901B13100BE11B5 /* PickerTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTestViewController.swift; sourceTree = "<group>"; };
 		3A70C3D02901E4BE00BE11B5 /* Int+IntWithString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+IntWithString.swift"; sourceTree = "<group>"; };
 		3A70C3D22901F7E800BE11B5 /* VideoInfoForDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInfoForDummy.swift; sourceTree = "<group>"; };
@@ -40,7 +44,7 @@
 		3AE56AB329002D6F00CF0043 /* CoreDataTestExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataTestExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AE56AB629002D6F00CF0043 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AE56AB829002D6F00CF0043 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3AE56ABA29002D6F00CF0043 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3AE56ABA29002D6F00CF0043 /* DefaultCRUDTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCRUDTestViewController.swift; sourceTree = "<group>"; };
 		3AE56AC029002D7000CF0043 /* CoreDataTestExample.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataTestExample.xcdatamodel; sourceTree = "<group>"; };
 		3AE56AC229002D7100CF0043 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AE56AC529002D7100CF0043 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,6 +67,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A2880F22903514A00FBFB70 /* CoreData-Sort */ = {
+			isa = PBXGroup;
+			children = (
+				3A2880E42902FCDF00FBFB70 /* SortViewController.swift */,
+				3A2880E62902FEDB00FBFB70 /* SortViewController+.swift */,
+				3A2880EC290348E800FBFB70 /* SortViewController++.swift */,
+			);
+			path = "CoreData-Sort";
+			sourceTree = "<group>";
+		};
+		3A2880F32903517200FBFB70 /* CoreData-CRUD */ = {
+			isa = PBXGroup;
+			children = (
+				3A2880E02902DB6700FBFB70 /* DefaultCRTestViewController.swift */,
+				3AE56ABA29002D6F00CF0043 /* DefaultCRUDTestViewController.swift */,
+			);
+			path = "CoreData-CRUD";
+			sourceTree = "<group>";
+		};
+		3A2880F42903518700FBFB70 /* CoreData-WithPicker */ = {
+			isa = PBXGroup;
+			children = (
+				3A70C3CC2901B13100BE11B5 /* PickerTestViewController.swift */,
+			);
+			path = "CoreData-WithPicker";
+			sourceTree = "<group>";
+		};
 		3A70C3C72901ADE500BE11B5 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,17 +127,13 @@
 				3AE56AD629002F5300CF0043 /* Model */,
 				3AE56AB629002D6F00CF0043 /* AppDelegate.swift */,
 				3AE56AB829002D6F00CF0043 /* SceneDelegate.swift */,
-				3AE56ABA29002D6F00CF0043 /* ViewController.swift */,
-				3A2880E42902FCDF00FBFB70 /* FinalSortViewController.swift */,
-				3A2880E62902FEDB00FBFB70 /* FinalSortViewController+.swift */,
-				3A2880EC290348E800FBFB70 /* FinalSortViewController++.swift */,
-				3A70C3CC2901B13100BE11B5 /* PickerTestViewController.swift */,
-				3A2880E02902DB6700FBFB70 /* TestViewController.swift */,
+				3A2880F32903517200FBFB70 /* CoreData-CRUD */,
+				3A2880F22903514A00FBFB70 /* CoreData-Sort */,
+				3A2880F42903518700FBFB70 /* CoreData-WithPicker */,
 				3AE56AC229002D7100CF0043 /* Assets.xcassets */,
 				3AE56AC429002D7100CF0043 /* LaunchScreen.storyboard */,
 				3AE56AC729002D7100CF0043 /* Info.plist */,
 				3AE56ABF29002D7000CF0043 /* CoreDataTestExample.xcdatamodeld */,
-				3AE56AD72900314200CF0043 /* CoreDataManager.swift */,
 			);
 			path = CoreDataTestExample;
 			sourceTree = "<group>";
@@ -115,8 +142,11 @@
 			isa = PBXGroup;
 			children = (
 				3AE56AD429002F3100CF0043 /* VideoInfo.swift */,
-				3AB796A729008FC100B15B28 /* EditAttribute.swift */,
 				3A70C3D22901F7E800BE11B5 /* VideoInfoForDummy.swift */,
+				3AE56AD72900314200CF0043 /* CoreDataManager.swift */,
+				3AB796A729008FC100B15B28 /* EditAttribute.swift */,
+				3A2880EE290350F500FBFB70 /* SortOption.swift */,
+				3A2880F02903510700FBFB70 /* FilterOption.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -197,18 +227,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AE56ABB29002D7000CF0043 /* ViewController.swift in Sources */,
-				3A2880E12902DB6700FBFB70 /* TestViewController.swift in Sources */,
+				3A2880F12903510700FBFB70 /* FilterOption.swift in Sources */,
+				3AE56ABB29002D7000CF0043 /* DefaultCRUDTestViewController.swift in Sources */,
+				3A2880E12902DB6700FBFB70 /* DefaultCRTestViewController.swift in Sources */,
 				3AE56AB729002D6F00CF0043 /* AppDelegate.swift in Sources */,
-				3A2880E52902FCDF00FBFB70 /* FinalSortViewController.swift in Sources */,
+				3A2880E52902FCDF00FBFB70 /* SortViewController.swift in Sources */,
 				3A70C3CD2901B13100BE11B5 /* PickerTestViewController.swift in Sources */,
 				3AE56AC129002D7000CF0043 /* CoreDataTestExample.xcdatamodeld in Sources */,
 				3AE56AB929002D6F00CF0043 /* SceneDelegate.swift in Sources */,
 				3AE56AF82900728000CF0043 /* VideoInformation+CoreDataProperties.swift in Sources */,
 				3A70C3D12901E4BE00BE11B5 /* Int+IntWithString.swift in Sources */,
 				3AE56AF72900728000CF0043 /* VideoInformation+CoreDataClass.swift in Sources */,
-				3A2880ED290348E800FBFB70 /* FinalSortViewController++.swift in Sources */,
-				3A2880E72902FEDB00FBFB70 /* FinalSortViewController+.swift in Sources */,
+				3A2880EF290350F500FBFB70 /* SortOption.swift in Sources */,
+				3A2880ED290348E800FBFB70 /* SortViewController++.swift in Sources */,
+				3A2880E72902FEDB00FBFB70 /* SortViewController+.swift in Sources */,
 				3A70C3D32901F7E800BE11B5 /* VideoInfoForDummy.swift in Sources */,
 				3AE56AD82900314200CF0043 /* CoreDataManager.swift in Sources */,
 				3AB796A829008FC100B15B28 /* EditAttribute.swift in Sources */,
