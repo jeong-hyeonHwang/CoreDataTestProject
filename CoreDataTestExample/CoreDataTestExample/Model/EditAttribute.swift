@@ -9,5 +9,4 @@ import Foundation
 
 enum EditAttribute: String {
     case gymName, gymVisitDate, problemLevel, isSucceeded, feedback, isFavorite
-    
 }
