@@ -22,6 +22,7 @@ class CoreDataManager {
         }
     }
     
+    // struct class 어느게 swift에서 효율이 좋을까
     func createData(info: VideoInfo) {
         let entity = NSEntityDescription.insertNewObject(forEntityName: "VideoInformation", into: context)
         
@@ -31,8 +32,6 @@ class CoreDataManager {
         entity.setValue(info.videoUrl, forKey: "videoUrl")
         entity.setValue(info.problemLevel, forKey: "problemLevel")
         entity.setValue(info.isSucceeded, forKey: "isSucceeded")
-        entity.setValue(info.feedback, forKey: "feedback")
-        entity.setValue(info.isFavorite, forKey: "isFavorite")
         
         saveData(context: context)
     }
