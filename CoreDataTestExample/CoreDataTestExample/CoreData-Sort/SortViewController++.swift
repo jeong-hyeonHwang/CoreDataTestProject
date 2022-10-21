@@ -1,5 +1,5 @@
 //
-//  FinalSortViewController++.swift
+//  SortViewController++.swift
 //  CoreDataTestExample
 //
 //  Created by 황정현 on 2022/10/22.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension FinalSortViewController {
+extension SortViewController {
     func sortVideoInformation(videoInformation: [VideoInfoForDummy], sortOption: SortOption, isAscended: Bool) -> [[VideoInfoForDummy]] {
         
         var filteredInformation = videoInformation
@@ -28,6 +28,11 @@ extension FinalSortViewController {
         case .gymName:
             
             filteredInformation.sort(by: { $0.gymName > $1.gymName })
+            
+            print("DATA NUM: \(filteredInformation.count)")
+            filteredInformation.forEach({
+                printData(info: $0)
+            })
             
             if !isAscended {
                 filteredInformation.reverse()
@@ -50,6 +55,9 @@ extension FinalSortViewController {
                 filteredInfoIndex += 1
                 
             }
+            
+            print("DATA NUM: \(filteredInformation.count)")
+            printAllData(sortedVideoInformation: sortedInformation)
             
             currentSortedInformationIndex = -1
             
@@ -86,6 +94,9 @@ extension FinalSortViewController {
                 }
             }
             
+            print("DATA NUM: \(filteredInformation.count)")
+            printAllData(sortedVideoInformation: finalSortedInformation)
+            
             return finalSortedInformation
             
             // MARK: 클라이밍장 이름을 분류하는 케이스
@@ -98,6 +109,11 @@ extension FinalSortViewController {
         case .gymVisitDate:
             
             filteredInformation.sort(by: { $0.gymVisitDate < $1.gymVisitDate })
+            
+            print("DATA NUM: \(filteredInformation.count)")
+            filteredInformation.forEach({
+                printData(info: $0)
+            })
             
             if !isAscended {
                 filteredInformation.reverse()
@@ -120,6 +136,9 @@ extension FinalSortViewController {
                 filteredInfoIndex += 1
                 
             }
+            
+            print("DATA NUM: \(filteredInformation.count)")
+            printAllData(sortedVideoInformation: sortedInformation)
             
             currentSortedInformationIndex = -1
             
@@ -155,6 +174,9 @@ extension FinalSortViewController {
                     
                 }
             }
+            
+            print("DATA NUM: \(filteredInformation.count)")
+            printAllData(sortedVideoInformation: finalSortedInformation)
             
             return finalSortedInformation
         }

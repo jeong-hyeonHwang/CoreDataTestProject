@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DefaultCRUDTestViewController.swift
 //  CoreDataTestExample
 //
 //  Created by 황정현 on 2022/10/19.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class ViewController: UIViewController {
+class DefaultCRUDTestViewController: UIViewController {
 
     lazy var createDataButton: UIButton = {
         let button = UIButton()
@@ -168,7 +168,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController {
+extension DefaultCRUDTestViewController {
     func printCurrentLeftObject() {
         CoreDataManager.shared.readData().forEach({
             print("Data \($0.gymName) \($0.gymVisitDate) \($0.problemLevel) \($0.isSucceeded)")

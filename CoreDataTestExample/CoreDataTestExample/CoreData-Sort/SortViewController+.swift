@@ -1,5 +1,5 @@
 //
-//  FinalSortViewController+.swift
+//  SortViewController+.swift
 //  CoreDataTestExample
 //
 //  Created by 황정현 on 2022/10/22.
@@ -7,15 +7,7 @@
 
 import Foundation
 
-enum SortOption {
-    case gymName, gymVisitDate
-}
-
-enum FilterOption {
-    case all, favorite, success, failure
-}
-
-extension FinalSortViewController {
+extension SortViewController {
     
     func printCurrentLeftObject() {
         CoreDataManager.shared.readData().forEach({
@@ -258,4 +250,3 @@ extension FinalSortViewController {
 // TODO: 날짜별 분류인 경우 필연적으로 발생하는 암장 2개 이상을 집어넣는 케이스를 어떻게 Sorting할 것인지
 // TODO: Struct에서 들고오는 Property가 달라져서, 반복되는 메소드이지만 케이스 분리를 해야만해서 코드가 길어지는 케이스를 어떤 식으로 Handling할 것인지
 // TODO: CoreData인 경우에도 안정적으로 돌아가는지 테스트해보기 (Date Random Generating과 관련해서 공수 산정이 길어질 것 같아서 임시 Struct로 했던 부분을 어떻게든 해결해서 테스트...!)
-// TODO:

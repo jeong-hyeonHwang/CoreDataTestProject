@@ -1,5 +1,5 @@
 //
-//  FinalSortViewController.swift
+//  SortViewController.swift
 //  CoreDataTestExample
 //
 //  Created by 황정현 on 2022/10/22.
@@ -7,11 +7,11 @@
 
 import UIKit
 
-class FinalSortViewController: UIViewController {
+class SortViewController: UIViewController {
 
     let nameList = ["1암장", "2암장", "3암장", "4암장", "5암장"]
     let dateList = [1, 2, 3, 4, 5]
-    let url = "URLLL"
+    let url = "URL"
     let probLevelList = [0, 1, 2, 3, 4, 5]
     let tf = [true, false]
     
@@ -224,7 +224,7 @@ class FinalSortViewController: UIViewController {
             let randomIndex = Int.random(in: 0..<nameList.count)
             let name = nameList[randomIndex]
             let date = dateList[Int.random(in: 0..<nameList.count)]
-            let url = String(Int.random(in: 0..<1000000))
+            let url = url
             let level = probLevelList[Int.random(in: 0..<probLevelList.count)]
             let isSucceeded = tf[Int.random(in: 0..<tf.count)]
             let isFavorite = tf[Int.random(in: 0..<tf.count)]
