@@ -14,12 +14,12 @@ class CoreDataManager {
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private lazy var context = appDelegate.persistentContainer.viewContext
     
+    private lazy var videoInformation: [VideoInformation] = []
+    
     init() {
-        do {
-            try context.fetch(VideoInformation.fetchRequest())
-        } catch {
-            print(error.localizedDescription)
-        }
+        
+        videoInformation = readData()
+        
     }
     
     // struct class 어느게 swift에서 효율이 좋을까
