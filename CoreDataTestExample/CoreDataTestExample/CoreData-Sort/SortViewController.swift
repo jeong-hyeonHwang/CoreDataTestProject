@@ -15,7 +15,7 @@ class SortViewController: UIViewController {
     let probLevelList = [0, 1, 2, 3, 4, 5]
     let tf = [true, false]
     
-    var videoInformation: [VideoInfoForDummy] = []
+    var videoInformation: [VideoInformation] = []
     
     let fontSize: CGFloat = 10
     let margin: CGFloat = 10
@@ -24,7 +24,7 @@ class SortViewController: UIViewController {
     let sortButtonText = ["GYM UP", "GYM DOWN", "DATE UP", "DATE DOWN"]
     let sortButtons: [UIButton] = [UIButton(), UIButton(), UIButton(), UIButton()]
     
-    let sortNFilterButtonText = ["G UP F", "G DOWN F", "DATE UP F", "DATE DOWN F", "G UP S", "G DOWN S", "DATE UP S", "DATE DOWN S", "G UP FA", "G DOWN FA", "DATE UP FA", "DATE DOWN FA"]
+    let sortNFilterButtonText = ["GYM\nUP\nFAV", "GYM\nDOWN\nFAV", "DATE\nUP\nFAV", "DATE\nDOWN\nFAV", "GYM\nUP\nPASS", "GYM\nDOWN\nPASS", "DATE\nUP\nPASS", "DATE\nDOWN\nPASS", "GYM\nUP\nFAIL", "GYM\nDOWN\nFAIL", "DATE\nUP\nFAIL", "DATE\nDOWN\nFAIL"]
     let sortNFilterButtons: [UIButton] = [UIButton(), UIButton(), UIButton(), UIButton(), UIButton(), UIButton(), UIButton(), UIButton(), UIButton(), UIButton(), UIButton(), UIButton()]
     
     override func viewDidLoad() {
@@ -85,6 +85,7 @@ class SortViewController: UIViewController {
             sortNFilterButtons[index].titleLabel?.font = .systemFont(ofSize: fontSize)
             sortNFilterButtons[index].setTitle(sortNFilterButtonText[index], for: .normal)
             sortNFilterButtons[index].setTitleColor(.black, for: .normal)
+            sortNFilterButtons[index].titleLabel?.numberOfLines = 3
             
             if index == 0 {
                 sortNFilterButtons[index].snp.makeConstraints({
@@ -145,72 +146,92 @@ class SortViewController: UIViewController {
     
     // MARK: NORMAL SORT ONLY
     @objc func gymUPSort () {
-        sortVideoInformation(videoInformation: videoInformation, sortOption: .gymName, isAscended: true)
+        sortVideoInformation(videoInformation: videoInformation, sortOption: .gymName)
     }
     
     @objc func gymDOWNSort () {
-        sortVideoInformation(videoInformation: videoInformation, sortOption: .gymName, isAscended: false)
+        var info = sortVideoInformation(videoInformation: videoInformation, sortOption: .gymName)
+        info = reverseSort(videoInformation: info)
+        
     }
     
     @objc func dateUPSort () {
-        sortVideoInformation(videoInformation: videoInformation, sortOption: .gymVisitDate, isAscended: true)
+        let info = sortVideoInformation(videoInformation: videoInformation, sortOption: .gymVisitDate)
+        printAllData(sortedVideoInformation: info)
     }
     
     @objc func dateDOWNSort () {
-        sortVideoInformation(videoInformation: videoInformation, sortOption: .gymVisitDate, isAscended: false)
+        var info = sortVideoInformation(videoInformation: videoInformation, sortOption: .gymVisitDate)
+        info = reverseSort(videoInformation: info)
+        printAllData(sortedVideoInformation: info)
     }
     
     // MARK: FILTER N SORT
     @objc func gymUPFavSort () {
-        sortVideoInformation(videoInformation: filterVideoInformation(videoInformation: videoInformation, filterOption: .favorite), sortOption: .gymName, isAscended: true)
+        let info = sortVideoInformation(videoInformation: filterVideoInformation(videoInformation: videoInformation, filterOption: .favorite), sortOption: .gymName)
+        printAllData(sortedVideoInformation: info)
     }
     
     @objc func gymDOWNFavSort () {
-        sortVideoInformation(videoInformation: filterVideoInformation(videoInformation: videoInformation, filterOption: .favorite), sortOption: .gymName, isAscended: false)
+        var info = sortVideoInformation(videoInformation: filterVideoInformation(videoInformation: videoInformation, filterOption: .favorite), sortOption: .gymName)
+        info = reverseSort(videoInformation: info)
+        printAllData(sortedVideoInformation: info)
     }
     
     @objc func dateUPFavSort () {
-        sortVideoInformation(videoInformation: filterVideoInformation(videoInformation: videoInformation, filterOption: .favorite), sortOption: .gymVisitDate, isAscended: true)
+        let info = sortVideoInformation(videoInformation: filterVideoInformation(videoInformation: videoInformation, filterOption: .favorite), sortOption: .gymVisitDate)
+        printAllData(sortedVideoInformation: info)
     }
     
     @objc func dateDOWNFavSort () {
-        sortVideoInformation(videoInformation: filterVideoInformation(videoInformation: videoInformation, filterOption: .favorite), sortOption: .gymVisitDate, isAscended: false)
+        var info = sortVideoInformation(videoInformation: filterVideoInformation(videoInformation: videoInformation, filterOption: .favorite), sortOption: .gymVisitDate)
+        info = reverseSort(videoInformation: info)
+        printAllData(sortedVideoInformation: info)
     }
     
     @objc func gymUPSuccessSort () {
-        sortVideoInformation(videoInformation: filterVideoInformation(videoInformation: videoInformation, filterOption: .success), sortOption: .gymName, isAscended: true)
+        let info = sortVideoInformation(videoInformation: filterVideoInformation(videoInformation: videoInformation, filterOption: .success), sortOption: .gymName)
+        printAllData(sortedVideoInformation: info)
+        
     }
     
     @objc func gymDOWNSuccessSort () {
-        sortVideoInformation(videoInformation: filterVideoInformation(videoInformation: videoInformation, filterOption: .success), sortOption: .gymName, isAscended: false)
+        var info = sortVideoInformation(videoInformation: filterVideoInformation(videoInformation: videoInformation, filterOption: .success), sortOption: .gymName)
+        info = reverseSort(videoInformation: info)
+        printAllData(sortedVideoInformation: info)
     }
     
     @objc func dateUPSuccessSort () {
-        sortVideoInformation(videoInformation: filterVideoInformation(videoInformation: videoInformation, filterOption: .success), sortOption: .gymVisitDate, isAscended: true)
+        let info = sortVideoInformation(videoInformation: filterVideoInformation(videoInformation: videoInformation, filterOption: .success), sortOption: .gymVisitDate)
+        printAllData(sortedVideoInformation: info)
     }
     
     @objc func dateDOWNSuccessSort () {
-        sortVideoInformation(videoInformation: filterVideoInformation(videoInformation: videoInformation, filterOption: .success), sortOption: .gymVisitDate, isAscended: false)
+        var info = sortVideoInformation(videoInformation: filterVideoInformation(videoInformation: videoInformation, filterOption: .success), sortOption: .gymVisitDate)
+        info = reverseSort(videoInformation: info)
+        printAllData(sortedVideoInformation: info)
     }
     
     @objc func gymUPFailureSort () {
-        let info =  filterVideoInformation(videoInformation: videoInformation, filterOption: .failure)
-        sortVideoInformation(videoInformation: info, sortOption: .gymName, isAscended: true)
+        let info = sortVideoInformation(videoInformation: filterVideoInformation(videoInformation: videoInformation, filterOption: .failure), sortOption: .gymName)
+        printAllData(sortedVideoInformation: info)
     }
     
     @objc func gymDOWNFailureSort () {
-        let info = filterVideoInformation(videoInformation: videoInformation, filterOption: .failure)
-        sortVideoInformation(videoInformation: info, sortOption: .gymName, isAscended: false)
+        var info = sortVideoInformation(videoInformation: filterVideoInformation(videoInformation: videoInformation, filterOption: .failure), sortOption: .gymName)
+        info = reverseSort(videoInformation: info)
+        printAllData(sortedVideoInformation: info)
     }
     
     @objc func dateUPFailureSort () {
-        let info = filterVideoInformation(videoInformation: videoInformation, filterOption: .failure)
-        sortVideoInformation(videoInformation: info, sortOption: .gymVisitDate, isAscended: true)
+        let info = sortVideoInformation(videoInformation: filterVideoInformation(videoInformation: videoInformation, filterOption: .failure), sortOption: .gymVisitDate)
+        printAllData(sortedVideoInformation: info)
     }
     
     @objc func dateDOWNFailureSort () {
-        let info = filterVideoInformation(videoInformation: videoInformation, filterOption: .failure)
-        sortVideoInformation(videoInformation: info, sortOption: .gymVisitDate, isAscended: false)
+        var info = sortVideoInformation(videoInformation: filterVideoInformation(videoInformation: videoInformation, filterOption: .failure), sortOption: .gymVisitDate)
+        info = reverseSort(videoInformation: info)
+        printAllData(sortedVideoInformation: info)
     }
     
     
