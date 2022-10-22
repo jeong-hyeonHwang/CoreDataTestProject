@@ -8,7 +8,7 @@
 import Foundation
 
 extension SortViewController {
-    func sortVideoInformation(videoInformation: [VideoInfoForDummy], sortOption: SortOption, isAscended: Bool) -> [[VideoInfoForDummy]] {
+    func sortVideoInformation(videoInformation: [VideoInfoForDummy], sortOption: SortOption) -> [[VideoInfoForDummy]] {
         
         var filteredInformation = videoInformation
         var sortedInformation: [[VideoInfoForDummy]] = []
@@ -29,15 +29,6 @@ extension SortViewController {
             
             filteredInformation.sort(by: { $0.gymName > $1.gymName })
             
-            print("DATA NUM: \(filteredInformation.count)")
-            filteredInformation.forEach({
-                printData(info: $0)
-            })
-            
-            if !isAscended {
-                filteredInformation.reverse()
-            }
-            
             sortedInformation.append([])
             var currentGymName = filteredInformation[filteredInfoIndex].gymName
             
@@ -55,9 +46,6 @@ extension SortViewController {
                 filteredInfoIndex += 1
                 
             }
-            
-            print("DATA NUM: \(filteredInformation.count)")
-            printAllData(sortedVideoInformation: sortedInformation)
             
             currentSortedInformationIndex = -1
             
@@ -94,9 +82,6 @@ extension SortViewController {
                 }
             }
             
-            print("DATA NUM: \(filteredInformation.count)")
-            printAllData(sortedVideoInformation: finalSortedInformation)
-            
             return finalSortedInformation
             
             // MARK: 클라이밍장 이름을 분류하는 케이스
@@ -109,15 +94,6 @@ extension SortViewController {
         case .gymVisitDate:
             
             filteredInformation.sort(by: { $0.gymVisitDate < $1.gymVisitDate })
-            
-            print("DATA NUM: \(filteredInformation.count)")
-            filteredInformation.forEach({
-                printData(info: $0)
-            })
-            
-            if !isAscended {
-                filteredInformation.reverse()
-            }
             
             sortedInformation.append([])
             var currentGymVisitDate = filteredInformation[filteredInfoIndex].gymVisitDate
@@ -136,9 +112,6 @@ extension SortViewController {
                 filteredInfoIndex += 1
                 
             }
-            
-            print("DATA NUM: \(filteredInformation.count)")
-            printAllData(sortedVideoInformation: sortedInformation)
             
             currentSortedInformationIndex = -1
             
@@ -175,11 +148,16 @@ extension SortViewController {
                 }
             }
             
-            print("DATA NUM: \(filteredInformation.count)")
-            printAllData(sortedVideoInformation: finalSortedInformation)
-            
             return finalSortedInformation
         }
+    }
+    
+    func reverseSort(videoInformation: [[VideoInfoForDummy]]) -> [[VideoInfoForDummy]]{
+        
+        var videoInformation = videoInformation
+        videoInformation.reverse()
+        
+        return videoInformation
     }
 
 }
