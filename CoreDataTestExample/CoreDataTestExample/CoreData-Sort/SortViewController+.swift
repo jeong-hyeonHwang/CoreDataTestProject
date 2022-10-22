@@ -70,13 +70,13 @@ extension SortViewController {
             filteredInformation = originInformation
             break
         case .favorite:
-            filteredInformation = originInformation.filter({ $0.isFavorite })
+            filteredInformation = originInformation.filter({ $0.isFavorite == true})
             break
         case .success:
-            filteredInformation = originInformation.filter({ $0.isSucceeded })
+            filteredInformation = originInformation.filter({ $0.isSucceeded == true})
             break
         case .failure:
-            filteredInformation = originInformation.filter({ !$0.isSucceeded })
+            filteredInformation = originInformation.filter({ $0.isSucceeded == false })
             break
         }
         
