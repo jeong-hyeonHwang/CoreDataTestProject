@@ -9,18 +9,11 @@ import UIKit
 import CoreData
 
 class CoreDataManager {
-    static var shared = CoreDataManager()
     
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private lazy var context = appDelegate.persistentContainer.viewContext
     
-//    private var rawVideoInformation: [VideoInformation] = []
-//    private var sortedVideoInformation: [[VideoInformation]] = []
-    
-    
-    init() {
-//        fetchData()
-    }
+    init() { }
     
     // struct class 어느게 swift에서 효율이 좋을까
     func createData(info: VideoInfo) {
@@ -41,29 +34,12 @@ class CoreDataManager {
         
         do {
             information = try context.fetch(VideoInformation.fetchRequest())
-            if information.count > 0 {
-//                print("CURRENT Gym Name Is \(information[0].gymName)")
-            }
         } catch {
             print(error.localizedDescription)
         }
         
-//        rawVideoInformation.removeAll()
-//        rawVideoInformation = information
+        print("FETCH DATA ONLY ONCE")
         return information
-    }
-    
-    // MARK: Ver.Update with Index
-    func updateData(index: Int) {
-        let information = readData()
-        
-        if information.count > index {
-            information[index].setValue("NOWhere", forKey: "gymName")
-            print("Update Data Index is \(index)")
-            saveData(context: context)
-        } else {
-         print("FAILURE: \(index)th index doesn't Exist")
-        }
     }
     
     func updateData(videoInformation: VideoInformation) {
@@ -173,19 +149,6 @@ class CoreDataManager {
             saveData(context: context)
     }
     
-    // MARK: Ver.Delete with Index
-    func deleteData(index: Int) {
-        let information = readData()
-        
-        if information.count > index {
-            context.delete(information[index])
-            print("Delete Data Index is \(index)")
-            saveData(context: context)
-        } else {
-            print("FAILURE: \(index)th index doesn't Exist")
-        }
-    }
-    
     func deleteData(videoInformation: VideoInformation) {
         
         guard let id = videoInformation.id else { return }
@@ -224,9 +187,5 @@ class CoreDataManager {
             print(error.localizedDescription)
         }
     }
-    
-//    func fetchData() {
-//        rawVideoInformation = readData()
-//    }
 }
 

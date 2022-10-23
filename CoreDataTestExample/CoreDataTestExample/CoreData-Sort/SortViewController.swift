@@ -8,12 +8,6 @@
 import UIKit
 
 class SortViewController: UIViewController {
-
-    let nameList = ["1암장", "2암장", "3암장", "4암장", "5암장"]
-    let dateList = [1, 2, 3, 4, 5]
-    let url = "URL"
-    let probLevelList = [0, 1, 2, 3, 4, 5]
-    let tf = [true, false]
     
     let fontSize: CGFloat = 10
     let margin: CGFloat = 10
@@ -47,10 +41,12 @@ class SortViewController: UIViewController {
         updateNDeleteComponentConfigure()
         
         rawDataButtonSet()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        coreDataRandomvideoInformationGenerate(howMany: 5)
+        
+//        DataManager.shared.deleteAllData()
+//        DataManager.shared.coreDataRandomvideoInformationGenerate(howMany: 5)
+        
+        DataManager.shared.repositoryUpdate()
+        
     }
     
     func rawDataButtonSet() {
@@ -81,20 +77,6 @@ class SortViewController: UIViewController {
             sortButtons[index].titleLabel?.font = .systemFont(ofSize: fontSize)
             sortButtons[index].setTitle(sortButtonText[index], for: .normal)
             sortButtons[index].setTitleColor(.black, for: .normal)
-            
-//            if index < 2 {
-//                sortButtons[index].snp.makeConstraints({
-//                    $0.leading.equalTo(safeArea).inset(margin * CGFloat(index * 5))
-//                    $0.centerY.equalToSuperview()
-//                    $0.width.height.equalTo(widthNHeight)
-//                })
-//            } else {
-//                sortButtons[index].snp.makeConstraints({
-//                    $0.trailing.equalTo(safeArea).inset(margin * CGFloat(index * 5))
-//                    $0.centerY.equalToSuperview()
-//                    $0.width.height.equalTo(widthNHeight)
-//                })
-//            }
         }
         
         sortButtons[0].snp.makeConstraints({
@@ -320,7 +302,7 @@ class SortViewController: UIViewController {
     }
 
     @objc func gymDOWNSuccessSort () {
-       // DataManager.shared.repository.sortVideoInformation(filterOption: .success, sortOption: .gymName)
+        DataManager.shared.repository.sortVideoInformation(filterOption: .success, sortOption: .gymName)
         DataManager.shared.repository.reverseSort()
         DataManager.shared.repository.printAllSortedData(standard: .gymName)
     }
@@ -382,45 +364,4 @@ class SortViewController: UIViewController {
         DataManager.shared.deleteAllData()
     }
     
-    func randomvideoInformationGenerate(howMany: Int) -> [VideoInfoForDummy] {
-        
-        var dataList: [VideoInfoForDummy] = []
-        
-        for _ in 0..<howMany {
-            let randomIndex = Int.random(in: 0..<nameList.count)
-            let name = nameList[randomIndex]
-            let date = dateList[Int.random(in: 0..<nameList.count)]
-            let url = url
-            let level = probLevelList[Int.random(in: 0..<probLevelList.count)]
-            let isSucceeded = tf[Int.random(in: 0..<tf.count)]
-            let isFavorite = tf[Int.random(in: 0..<tf.count)]
-            
-            let info = VideoInfoForDummy(gymName: name, gymVisitDate: date, videoUrl: url, problemLevel: level, isSucceeded: isSucceeded, isFavorite: isFavorite)
-            
-            dataList.append(info)
-        }
-        
-        return dataList
-    }
-    
-    func coreDataRandomvideoInformationGenerate(howMany: Int) {
-
-        for _ in 0..<howMany {
-            let randomIndex = Int.random(in: 0..<nameList.count)
-            let name = nameList[randomIndex]
-            let date = Date.random(in: Date(timeIntervalSince1970: 0)..<Date(timeIntervalSince1970: 2000000))
-            let url = url
-            let level = probLevelList[Int.random(in: 0..<probLevelList.count)]
-            let isSucceeded = tf[Int.random(in: 0..<tf.count)]
-            let isFavorite = tf[Int.random(in: 0..<tf.count)]
-            
-            let info = VideoInfo(gymName: name, gymVisitDate: date, videoUrl: url, problemLevel: level, isSucceeded: isSucceeded)
-            
-            DataManager.shared.createData(info: info)
-            
-        }
-        
-//        print(DataManager.shared.coreDataManager.readData().count)
-    }
-
 }

@@ -13,7 +13,10 @@ class DataRepository {
     var rawVideoInformation: [VideoInformation] = []
     var sortedVideoInformation: [[VideoInformation]] = []
     
-    init() { }
+    init() {
+        rawVideoInformation = [ ]
+        sortedVideoInformation = [[ ]]
+    }
     
     func filterVideoInformation(filterOption: FilterOption) -> [VideoInformation] {
         
@@ -32,7 +35,7 @@ class DataRepository {
     func sortVideoInformation(filterOption: FilterOption, sortOption: SortOption) {
         
         self.sortedVideoInformation.removeAll()
-        
+        sortedVideoInformation.append([])
         var filteredInformation = filterVideoInformation(filterOption: filterOption)
         
         if filteredInformation.count == 0 {

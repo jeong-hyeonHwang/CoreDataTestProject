@@ -9,10 +9,16 @@ import Foundation
 
 class DataManager {
     
+    let nameList = ["1암장", "2암장", "3암장", "4암장", "5암장"]
+    let dateList = [1, 2, 3, 4, 5]
+    let url = "URL"
+    let probLevelList = [0, 1, 2, 3, 4, 5]
+    let tf = [true, false]
+    
     static var shared = DataManager()
     
-    var repository = DataRepository()
-    var coreDataManager = CoreDataManager()
+    var repository: DataRepository!
+    var coreDataManager: CoreDataManager!
     
     var currentFilterOption: FilterOption = .all
     var currentSortOption: SortOption = .gymVisitDate
@@ -20,10 +26,14 @@ class DataManager {
     
     init() {
         
-//        coreDataManager.deleteAllData()
+        repository = DataRepository()
+        coreDataManager = CoreDataManager()
+        
+    }
+    
+    func repositoryUpdate() {
         repository.rawVideoInformation = coreDataManager.readData()
         repository.finalSortVideoInformation(filterOption: currentFilterOption, sortOption: currentSortOption, orderOption: currentOrderOption)
-        
     }
     
     func changeSortOption(sortOption: SortOption) {
@@ -40,8 +50,8 @@ class DataManager {
     
     
     func createData(info: VideoInfo) {
-        //repository.createData(info: info)
         coreDataManager.createData(info: info)
+//        repository.createData(info: info)
     }
     
     func updateDateAndGymData(videoInformation: VideoInformation, gymVisitDate: Date, gymName: String) {
@@ -73,5 +83,29 @@ class DataManager {
     func deleteAllData() {
         coreDataManager.deleteAllData()
         repository.deleteAllData()
+    }
+}
+
+extension DataManager {
+    func coreDataRandomvideoInformationGenerate(howMany: Int) {
+
+        for _ in 0..<howMany {
+            let randomIndex = Int.random(in: 0..<nameList.count)
+            let name = nameList[randomIndex]
+            let date = Date.random(in: Date(timeIntervalSince1970: 0)..<Date(timeIntervalSince1970: 2000000))
+            let url = url
+            let level = probLevelList[Int.random(in: 0..<probLevelList.count)]
+            let isSucceeded = tf[Int.random(in: 0..<tf.count)]
+            let isFavorite = tf[Int.random(in: 0..<tf.count)]
+            
+            let info = VideoInfo(gymName: name, gymVisitDate: date, videoUrl: url, problemLevel: level, isSucceeded: isSucceeded)
+            
+            createData(info: info)
+            print("CREATE NEW DATA")
+        }
+        
+        repositoryUpdate()
+        
+        print(coreDataManager.readData().count)
     }
 }
