@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A11798F2905C8A10033F174 /* OrderOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A11798E2905C8A10033F174 /* OrderOption.swift */; };
+		3A1179912905CC7E0033F174 /* DataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1179902905CC7E0033F174 /* DataRepository.swift */; };
+		3A1179932905CF0F0033F174 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1179922905CF0F0033F174 /* DataManager.swift */; };
+		3A1179962905D9EB0033F174 /* UpdateDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1179952905D9EB0033F174 /* UpdateDeleteViewController.swift */; };
 		3A2880E12902DB6700FBFB70 /* DefaultCRTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2880E02902DB6700FBFB70 /* DefaultCRTestViewController.swift */; };
 		3A2880E52902FCDF00FBFB70 /* SortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2880E42902FCDF00FBFB70 /* SortViewController.swift */; };
 		3A2880E72902FEDB00FBFB70 /* SortViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2880E62902FEDB00FBFB70 /* SortViewController+.swift */; };
@@ -31,6 +35,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A11798E2905C8A10033F174 /* OrderOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderOption.swift; sourceTree = "<group>"; };
+		3A1179902905CC7E0033F174 /* DataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRepository.swift; sourceTree = "<group>"; };
+		3A1179922905CF0F0033F174 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		3A1179952905D9EB0033F174 /* UpdateDeleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDeleteViewController.swift; sourceTree = "<group>"; };
 		3A2880E02902DB6700FBFB70 /* DefaultCRTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCRTestViewController.swift; sourceTree = "<group>"; };
 		3A2880E42902FCDF00FBFB70 /* SortViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortViewController.swift; sourceTree = "<group>"; };
 		3A2880E62902FEDB00FBFB70 /* SortViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SortViewController+.swift"; sourceTree = "<group>"; };
@@ -67,6 +75,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A1179942905D9CA0033F174 /* CoreData-UpdateDelete */ = {
+			isa = PBXGroup;
+			children = (
+				3A1179952905D9EB0033F174 /* UpdateDeleteViewController.swift */,
+			);
+			path = "CoreData-UpdateDelete";
+			sourceTree = "<group>";
+		};
 		3A2880F22903514A00FBFB70 /* CoreData-Sort */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +145,7 @@
 				3AE56AB829002D6F00CF0043 /* SceneDelegate.swift */,
 				3A2880F32903517200FBFB70 /* CoreData-CRUD */,
 				3A2880F22903514A00FBFB70 /* CoreData-Sort */,
+				3A1179942905D9CA0033F174 /* CoreData-UpdateDelete */,
 				3A2880F42903518700FBFB70 /* CoreData-WithPicker */,
 				3AE56AC229002D7100CF0043 /* Assets.xcassets */,
 				3AE56AC429002D7100CF0043 /* LaunchScreen.storyboard */,
@@ -143,10 +160,13 @@
 			children = (
 				3AE56AD429002F3100CF0043 /* VideoInfo.swift */,
 				3A70C3D22901F7E800BE11B5 /* VideoInfoForDummy.swift */,
+				3A1179902905CC7E0033F174 /* DataRepository.swift */,
 				3AE56AD72900314200CF0043 /* CoreDataManager.swift */,
+				3A1179922905CF0F0033F174 /* DataManager.swift */,
 				3AB796A729008FC100B15B28 /* EditAttribute.swift */,
 				3A2880EE290350F500FBFB70 /* SortOption.swift */,
 				3A2880F02903510700FBFB70 /* FilterOption.swift */,
+				3A11798E2905C8A10033F174 /* OrderOption.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -228,13 +248,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A2880F12903510700FBFB70 /* FilterOption.swift in Sources */,
+				3A1179912905CC7E0033F174 /* DataRepository.swift in Sources */,
 				3AE56ABB29002D7000CF0043 /* DefaultCRUDTestViewController.swift in Sources */,
 				3A2880F82903E5E100FBFB70 /* Date+RandomDate.swift in Sources */,
+				3A1179962905D9EB0033F174 /* UpdateDeleteViewController.swift in Sources */,
 				3A2880E12902DB6700FBFB70 /* DefaultCRTestViewController.swift in Sources */,
 				3AE56AB729002D6F00CF0043 /* AppDelegate.swift in Sources */,
 				3A2880E52902FCDF00FBFB70 /* SortViewController.swift in Sources */,
 				3A70C3CD2901B13100BE11B5 /* PickerTestViewController.swift in Sources */,
 				3AE56AC129002D7000CF0043 /* CoreDataTestExample.xcdatamodeld in Sources */,
+				3A11798F2905C8A10033F174 /* OrderOption.swift in Sources */,
+				3A1179932905CF0F0033F174 /* DataManager.swift in Sources */,
 				3AE56AB929002D6F00CF0043 /* SceneDelegate.swift in Sources */,
 				3AE56AF82900728000CF0043 /* VideoInformation+CoreDataProperties.swift in Sources */,
 				3A70C3D12901E4BE00BE11B5 /* Int+IntWithString.swift in Sources */,
