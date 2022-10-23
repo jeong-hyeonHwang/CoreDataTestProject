@@ -42,9 +42,11 @@ class SortViewController: UIViewController {
         
         rawDataButtonSet()
         
+        // 새로운 데이터 생성 후 테스트 시 주석 제거 & repositoryUpdate 주석
 //        DataManager.shared.deleteAllData()
 //        DataManager.shared.coreDataRandomvideoInformationGenerate(howMany: 5)
         
+        // 기존 데이터로 테스트 시 주석 제거 & line.46, 47 주석
         DataManager.shared.repositoryUpdate()
         
     }
