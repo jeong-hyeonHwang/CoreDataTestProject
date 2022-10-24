@@ -11,6 +11,8 @@
 		3A1179912905CC7E0033F174 /* DataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1179902905CC7E0033F174 /* DataRepository.swift */; };
 		3A1179932905CF0F0033F174 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1179922905CF0F0033F174 /* DataManager.swift */; };
 		3A1179962905D9EB0033F174 /* UpdateDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1179952905D9EB0033F174 /* UpdateDeleteViewController.swift */; };
+		3A1179982906CF910033F174 /* SortViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1179972906CF910033F174 /* SortViewController+.swift */; };
+		3A11799A2906D16A0033F174 /* SectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1179992906D16A0033F174 /* SectionData.swift */; };
 		3A2880E12902DB6700FBFB70 /* DefaultCRTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2880E02902DB6700FBFB70 /* DefaultCRTestViewController.swift */; };
 		3A2880E52902FCDF00FBFB70 /* SortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2880E42902FCDF00FBFB70 /* SortViewController.swift */; };
 		3A2880EF290350F500FBFB70 /* SortOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2880EE290350F500FBFB70 /* SortOption.swift */; };
@@ -38,6 +40,8 @@
 		3A1179902905CC7E0033F174 /* DataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRepository.swift; sourceTree = "<group>"; };
 		3A1179922905CF0F0033F174 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		3A1179952905D9EB0033F174 /* UpdateDeleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDeleteViewController.swift; sourceTree = "<group>"; };
+		3A1179972906CF910033F174 /* SortViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SortViewController+.swift"; sourceTree = "<group>"; };
+		3A1179992906D16A0033F174 /* SectionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionData.swift; sourceTree = "<group>"; };
 		3A2880E02902DB6700FBFB70 /* DefaultCRTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCRTestViewController.swift; sourceTree = "<group>"; };
 		3A2880E42902FCDF00FBFB70 /* SortViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortViewController.swift; sourceTree = "<group>"; };
 		3A2880EE290350F500FBFB70 /* SortOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortOption.swift; sourceTree = "<group>"; };
@@ -85,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				3A2880E42902FCDF00FBFB70 /* SortViewController.swift */,
+				3A1179972906CF910033F174 /* SortViewController+.swift */,
 			);
 			path = "CoreData-Sort";
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 				3A2880EE290350F500FBFB70 /* SortOption.swift */,
 				3A2880F02903510700FBFB70 /* FilterOption.swift */,
 				3A11798E2905C8A10033F174 /* OrderOption.swift */,
+				3A1179992906D16A0033F174 /* SectionData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -246,6 +252,7 @@
 			files = (
 				3A2880F12903510700FBFB70 /* FilterOption.swift in Sources */,
 				3A1179912905CC7E0033F174 /* DataRepository.swift in Sources */,
+				3A11799A2906D16A0033F174 /* SectionData.swift in Sources */,
 				3AE56ABB29002D7000CF0043 /* DefaultCRUDTestViewController.swift in Sources */,
 				3A2880F82903E5E100FBFB70 /* Date+RandomDate.swift in Sources */,
 				3A1179962905D9EB0033F174 /* UpdateDeleteViewController.swift in Sources */,
@@ -258,6 +265,7 @@
 				3A1179932905CF0F0033F174 /* DataManager.swift in Sources */,
 				3AE56AB929002D6F00CF0043 /* SceneDelegate.swift in Sources */,
 				3AE56AF82900728000CF0043 /* VideoInformation+CoreDataProperties.swift in Sources */,
+				3A1179982906CF910033F174 /* SortViewController+.swift in Sources */,
 				3A70C3D12901E4BE00BE11B5 /* Int+IntWithString.swift in Sources */,
 				3AE56AF72900728000CF0043 /* VideoInformation+CoreDataClass.swift in Sources */,
 				3A2880EF290350F500FBFB70 /* SortOption.swift in Sources */,
