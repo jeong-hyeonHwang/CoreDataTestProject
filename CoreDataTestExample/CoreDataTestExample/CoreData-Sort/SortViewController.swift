@@ -9,6 +9,8 @@ import UIKit
 
 class SortViewController: UIViewController {
     
+//    var videoInformation: [VideoInformation] = []
+    
     let fontSize: CGFloat = 10
     let margin: CGFloat = 10
     let widthNHeight: CGFloat = 75
@@ -47,7 +49,7 @@ class SortViewController: UIViewController {
 //        DataManager.shared.coreDataRandomvideoInformationGenerate(howMany: 5)
         
         // 기존 데이터로 테스트 시 주석 제거 & line.46, 47 주석
-        DataManager.shared.repositoryUpdate()
+        DataManager.shared.updateRepository()
         
     }
     
