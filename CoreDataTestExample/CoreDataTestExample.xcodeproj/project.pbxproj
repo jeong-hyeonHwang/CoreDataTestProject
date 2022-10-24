@@ -30,7 +30,7 @@
 		3AE56AC629002D7100CF0043 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AE56AC429002D7100CF0043 /* LaunchScreen.storyboard */; };
 		3AE56AD329002EFD00CF0043 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3AE56AD229002EFD00CF0043 /* SnapKit */; };
 		3AE56AD529002F3100CF0043 /* VideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE56AD429002F3100CF0043 /* VideoInfo.swift */; };
-		3AE56AD82900314200CF0043 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE56AD72900314200CF0043 /* CoreDataManager.swift */; };
+		3AE56AD82900314200CF0043 /* CoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE56AD72900314200CF0043 /* CoreDataDAO.swift */; };
 		3AE56AF72900728000CF0043 /* VideoInformation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE56AF52900728000CF0043 /* VideoInformation+CoreDataClass.swift */; };
 		3AE56AF82900728000CF0043 /* VideoInformation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE56AF62900728000CF0043 /* VideoInformation+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
@@ -60,7 +60,7 @@
 		3AE56AC529002D7100CF0043 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3AE56AC729002D7100CF0043 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AE56AD429002F3100CF0043 /* VideoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInfo.swift; sourceTree = "<group>"; };
-		3AE56AD72900314200CF0043 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		3AE56AD72900314200CF0043 /* CoreDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDAO.swift; sourceTree = "<group>"; };
 		3AE56AF52900728000CF0043 /* VideoInformation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "VideoInformation+CoreDataClass.swift"; path = "CoreDataTestExample/VideoInformation+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3AE56AF62900728000CF0043 /* VideoInformation+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "VideoInformation+CoreDataProperties.swift"; path = "CoreDataTestExample/VideoInformation+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,7 +163,7 @@
 				3AE56AD429002F3100CF0043 /* VideoInfo.swift */,
 				3A70C3D22901F7E800BE11B5 /* VideoInfoForDummy.swift */,
 				3A1179902905CC7E0033F174 /* DataRepository.swift */,
-				3AE56AD72900314200CF0043 /* CoreDataManager.swift */,
+				3AE56AD72900314200CF0043 /* CoreDataDAO.swift */,
 				3A1179922905CF0F0033F174 /* DataManager.swift */,
 				3AB796A729008FC100B15B28 /* EditAttribute.swift */,
 				3A2880EE290350F500FBFB70 /* SortOption.swift */,
@@ -270,7 +270,7 @@
 				3AE56AF72900728000CF0043 /* VideoInformation+CoreDataClass.swift in Sources */,
 				3A2880EF290350F500FBFB70 /* SortOption.swift in Sources */,
 				3A70C3D32901F7E800BE11B5 /* VideoInfoForDummy.swift in Sources */,
-				3AE56AD82900314200CF0043 /* CoreDataManager.swift in Sources */,
+				3AE56AD82900314200CF0043 /* CoreDataDAO.swift in Sources */,
 				3AB796A829008FC100B15B28 /* EditAttribute.swift in Sources */,
 				3AE56AD529002F3100CF0043 /* VideoInfo.swift in Sources */,
 			);

@@ -219,10 +219,6 @@ class DataRepository {
     }
     
     func deleteData(videoInformation: VideoInformation) {
-//
-//        guard let id = videoInformation.id else { print("NONE EXIST...")
-//            return }
-//
         
         let target = rawVideoInformation.filter({ $0 == videoInformation })
         print("CONFIRM")
@@ -230,6 +226,12 @@ class DataRepository {
             rawVideoInformation.remove(at: index)
         }
         print("Delete Data")
+    }
+    
+    func deleteDataList(videoInformation: [VideoInformation]) {
+        for information in videoInformation {
+            deleteData(videoInformation: information)
+        }
     }
     
     func deleteAllData() {
