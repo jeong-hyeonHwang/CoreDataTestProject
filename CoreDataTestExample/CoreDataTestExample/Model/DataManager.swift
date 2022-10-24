@@ -18,36 +18,22 @@ class DataManager {
     static var shared = DataManager()
     
     var repository: DataRepository!
-    var coreDataManager: CoreDataManager!
-    
-    var currentFilterOption: FilterOption = .all
-    var currentSortOption: SortOption = .gymVisitDate
-    var currentOrderOption: OrderOption = .ascend
+    var coreDataManager: CoreDataDAO!
     
     init() {
         
         repository = DataRepository()
-        coreDataManager = CoreDataManager()
+        coreDataManager = CoreDataDAO()
         
     }
     
-    func repositoryUpdate() {
+    func sortRepository(filterOption: FilterOption, sortOption: SortOption, orderOption: OrderOption) {
+        repository.finalSortVideoInformation(filterOption: filterOption, sortOption: sortOption, orderOption: orderOption)
+    }
+    
+    func updateRepository() {
         repository.rawVideoInformation = coreDataManager.readData()
-        repository.finalSortVideoInformation(filterOption: currentFilterOption, sortOption: currentSortOption, orderOption: currentOrderOption)
     }
-    
-    func changeSortOption(sortOption: SortOption) {
-        currentSortOption = sortOption
-    }
-    
-    func changeFilterOption(filterOption: FilterOption) {
-        currentFilterOption = filterOption
-    }
-    
-    func changeOrderOption(orderOption: OrderOption) {
-        currentOrderOption = orderOption
-    }
-    
     
     func createData(info: VideoInfo) {
         coreDataManager.createData(info: info)
@@ -65,7 +51,6 @@ class DataManager {
     }
     
     func updateFavorite(videoInformation: VideoInformation, isFavorite: Bool) {
-        
         coreDataManager.updateFavorite(videoInformation: videoInformation, isFavorite: isFavorite)
         repository.updateFavorite(videoInformation: videoInformation, isFavorite: isFavorite)
     }
@@ -104,7 +89,7 @@ extension DataManager {
             print("CREATE NEW DATA")
         }
         
-        repositoryUpdate()
+        updateRepository()
         
         print(coreDataManager.readData().count)
     }
