@@ -13,6 +13,8 @@
 		3A1179962905D9EB0033F174 /* UpdateDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1179952905D9EB0033F174 /* UpdateDeleteViewController.swift */; };
 		3A1179982906CF910033F174 /* SortViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1179972906CF910033F174 /* SortViewController+.swift */; };
 		3A11799A2906D16A0033F174 /* SectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1179992906D16A0033F174 /* SectionData.swift */; };
+		3A11799C2906E8260033F174 /* CRUDTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A11799B2906E8260033F174 /* CRUDTestViewController.swift */; };
+		3A11799E2906ED940033F174 /* CRUDTestViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A11799D2906ED940033F174 /* CRUDTestViewController+.swift */; };
 		3A2880E12902DB6700FBFB70 /* DefaultCRTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2880E02902DB6700FBFB70 /* DefaultCRTestViewController.swift */; };
 		3A2880E52902FCDF00FBFB70 /* SortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2880E42902FCDF00FBFB70 /* SortViewController.swift */; };
 		3A2880EF290350F500FBFB70 /* SortOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2880EE290350F500FBFB70 /* SortOption.swift */; };
@@ -42,6 +44,8 @@
 		3A1179952905D9EB0033F174 /* UpdateDeleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDeleteViewController.swift; sourceTree = "<group>"; };
 		3A1179972906CF910033F174 /* SortViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SortViewController+.swift"; sourceTree = "<group>"; };
 		3A1179992906D16A0033F174 /* SectionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionData.swift; sourceTree = "<group>"; };
+		3A11799B2906E8260033F174 /* CRUDTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CRUDTestViewController.swift; path = "CoreDataTestExample/CoreData-CRUD/CRUDTestViewController.swift"; sourceTree = SOURCE_ROOT; };
+		3A11799D2906ED940033F174 /* CRUDTestViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CRUDTestViewController+.swift"; sourceTree = "<group>"; };
 		3A2880E02902DB6700FBFB70 /* DefaultCRTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCRTestViewController.swift; sourceTree = "<group>"; };
 		3A2880E42902FCDF00FBFB70 /* SortViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortViewController.swift; sourceTree = "<group>"; };
 		3A2880EE290350F500FBFB70 /* SortOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortOption.swift; sourceTree = "<group>"; };
@@ -99,6 +103,8 @@
 			children = (
 				3A2880E02902DB6700FBFB70 /* DefaultCRTestViewController.swift */,
 				3AE56ABA29002D6F00CF0043 /* DefaultCRUDTestViewController.swift */,
+				3A11799B2906E8260033F174 /* CRUDTestViewController.swift */,
+				3A11799D2906ED940033F174 /* CRUDTestViewController+.swift */,
 			);
 			path = "CoreData-CRUD";
 			sourceTree = "<group>";
@@ -262,8 +268,10 @@
 				3A70C3CD2901B13100BE11B5 /* PickerTestViewController.swift in Sources */,
 				3AE56AC129002D7000CF0043 /* CoreDataTestExample.xcdatamodeld in Sources */,
 				3A11798F2905C8A10033F174 /* OrderOption.swift in Sources */,
+				3A11799C2906E8260033F174 /* CRUDTestViewController.swift in Sources */,
 				3A1179932905CF0F0033F174 /* DataManager.swift in Sources */,
 				3AE56AB929002D6F00CF0043 /* SceneDelegate.swift in Sources */,
+				3A11799E2906ED940033F174 /* CRUDTestViewController+.swift in Sources */,
 				3AE56AF82900728000CF0043 /* VideoInformation+CoreDataProperties.swift in Sources */,
 				3A1179982906CF910033F174 /* SortViewController+.swift in Sources */,
 				3A70C3D12901E4BE00BE11B5 /* Int+IntWithString.swift in Sources */,

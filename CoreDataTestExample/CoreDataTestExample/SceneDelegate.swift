@@ -17,7 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         
         let launchScreen = UIStoryboard(name: "LaunchScreen", bundle: nil).instantiateInitialViewController()
-        let homeViewController = SortViewController()
+//        let homeViewController = SortViewController()
+        let homeViewController = CRUDTestViewController()
         
         self.window = window
         window.rootViewController = launchScreen
