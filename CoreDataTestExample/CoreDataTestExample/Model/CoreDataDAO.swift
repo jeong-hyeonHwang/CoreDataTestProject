@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class CoreDataManager {
+class CoreDataDAO {
     
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private lazy var context = appDelegate.persistentContainer.viewContext
@@ -40,6 +40,7 @@ class CoreDataManager {
         
         print("FETCH DATA ONLY ONCE")
         return information
+
     }
     
     func updateData(videoInformation: VideoInformation) {
